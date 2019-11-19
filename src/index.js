@@ -6,15 +6,16 @@
  * import Vue from 'vue'
  * window.Vue = require('vue')
  */
-
+import Vue from 'vue'
 import './js/common'
 import './assets/styl/main.styl'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
-window.Vue = require('vue')
-Vue.component('example-component', require('./components/Example.vue').default)
+import App from './components/App.vue'
+import store from './store'
 
 // Vue init
-const app = new Vue({
-    el: '#app'
+new Vue({
+    el: '#app',
+    store,
+    render: h => h(App)
 })
