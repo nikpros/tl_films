@@ -1,10 +1,9 @@
 <template lang="pug">
-    .card(style='width: 18rem;')
-        img.card-img-top
+    .card
+        img.card-img-top(:src="`https://image.tmdb.org/t/p/w500${poster_path}`")
         .card-body
             h5.card-title {{ title }}
             p.card-text
-            a.btn.btn-primary(href='#') Go somewhere
 </template>
 
 <script>
@@ -17,7 +16,8 @@ export default {
         // ...mapGetters([''])
     },
     props: {
-        title: String
+        title: String,
+        poster_path: String
     },
     mounted() {
         

@@ -14,8 +14,8 @@ const state = {
 }
 
 const actions = {
-    getAllGenres({ commit }) {
-        fetch('https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=9d65863d09f75cecc0d4128a62045df3')
+    getAllGenres({ commit }, { key }) {
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${key}`)
         .then(response => response.json())
         .then(json => commit('updateArray', { array: 'genres', items: json }))
         .catch(ex => console.error('parse error ', ex))
@@ -23,9 +23,12 @@ const actions = {
     getAllMovies({ commit }) {
         fetch('https://api.themoviedb.org/3/discover/movie?&language=en&api_key=9d65863d09f75cecc0d4128a62045df3')
         .then(response => response.json())
-        .then(json => commit('updateMovies', { data: json }))
+        .then(json => {
+            commit('updateMovies', { data: json })
+        })
         .catch(ex => console.error('parse error ', ex))
     },
+
 
 }
 
