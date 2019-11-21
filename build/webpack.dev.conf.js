@@ -23,7 +23,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             jQuery: 'jquery'
         }),
         new Dotenv({
-            path: path.resolve(__dirname, '../config/.env')
+            path: path.resolve(__dirname, '../.env')
         })
         // new webpack.DefinePlugin({
         //     ENV: JSON.stringify(process.env)

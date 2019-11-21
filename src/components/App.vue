@@ -1,7 +1,7 @@
 <template lang="pug">
     .LAYOUT_APP.container-fluid.mt-5
         header.text-center
-            h1 Movie Search Engine
+            h1 Movie loader
         button.ln.btn.btn-info(@click="changeLanguage") {{ language.toUpperCase() }}
         section.container.genres.mt-5.text-center
             button.btn.btn-outline-primary.mr-2.mb-2(
