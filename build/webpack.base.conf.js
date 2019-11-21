@@ -1,5 +1,5 @@
 const path = require('path') // необходимо для корректного формирования путей в разных ОС
-const MiniCssExtractPlugin = require('mini-css-extract-plugin') 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')

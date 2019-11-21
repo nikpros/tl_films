@@ -12,6 +12,9 @@ import './assets/styl/main.styl'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './components/App.vue'
 import store from './store'
+import VModal from 'vue-js-modal'
+
+Vue.use(VModal)
 
 // Vue init
 new Vue({

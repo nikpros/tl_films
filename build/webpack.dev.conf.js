@@ -18,6 +18,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         new webpack.SourceMapDevToolPlugin({
             filename: '[file].map'
         }),
+        new webpack.ProvidePlugin({
+            '$': 'jquery',
+            jQuery: 'jquery'
+        }),
         new Dotenv({
             path: path.resolve(__dirname, '../config/.env')
         })

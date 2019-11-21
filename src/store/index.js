@@ -14,22 +14,23 @@ const state = {
 }
 
 const actions = {
-    getAllGenres({ commit }, { key }) {
-        fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${key}`)
+    getAllGenres({ commit }, { key, language }) {
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${key}&language=${language}`)
         .then(response => response.json())
         .then(json => commit('updateArray', { array: 'genres', items: json }))
         .catch(ex => console.error('parse error ', ex))
     },
-    getAllMovies({ commit }) {
-        fetch('https://api.themoviedb.org/3/discover/movie?&language=en&api_key=9d65863d09f75cecc0d4128a62045df3')
+    getAllMovies({ commit }, { page, genres, key, language }) {
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=${language}
+        ${page != undefined ? '&page='+page : ''}
+        ${typeof genres != 'undefined' && genres.length != 0 ? '&with_genres='+genres.map(el=> el.id).join() : ''}`
+        .replace(/\s/g,''))
         .then(response => response.json())
         .then(json => {
             commit('updateMovies', { data: json })
         })
         .catch(ex => console.error('parse error ', ex))
     },
-
-
 }
 
 const mutations = {
@@ -49,12 +50,6 @@ const getters = {
     films: state => state.movies.films,
     total_pages: state => state.movies.total_pages
 }
-
-
-
-
-
-
 
 
 export default new Vuex.Store({
