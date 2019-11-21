@@ -49,9 +49,6 @@ export default {
             }
         },
     },
-    mounted() {
-        console.log(this.card)
-    },
     methods: {
         show() {
             this.$modal.show(`modal${this.index}`)

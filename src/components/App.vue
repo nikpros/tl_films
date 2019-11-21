@@ -77,7 +77,6 @@ export default {
     },
     methods: {
         chunkedFilms() {
-            // console.log(this.films)
             return chunk(this.films, 4);
         },
         onChange() {
