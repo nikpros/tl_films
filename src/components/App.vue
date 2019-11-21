@@ -1,12 +1,7 @@
 <template lang="pug">
     .LAYOUT_APP.container-fluid.mt-5
-        //- .btn-group.btn-group-sm
-        //-     button.btn.btn-outline-primary EN
-        //-     button.btn.btn-outline-primary RU
-        //- ol.breadcrumb
-        //-     li.breadcrumb-item EN
-        //-     li.breadcrumb-item RU
-        h1.text-center TeamLead
+        header.text-center
+            h1 Movie Search Engine
         button.ln.btn.btn-info(@click="changeLanguage") {{ language.toUpperCase() }}
         section.container.genres.mt-5.text-center
             button.btn.btn-outline-primary.mr-2.mb-2(
